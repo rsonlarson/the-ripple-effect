@@ -256,7 +256,7 @@ export default function HomePage() {
                   transition={{ duration: 0.8 }}
                 >
                   <div className="inline-block px-4 py-2 border border-softbeige/30 rounded-full mb-6">
-                    <span className="font-paragraph text-sm tracking-widest uppercase">Current Initiative</span>
+                    <span className="font-paragraph text-sm tracking-widest uppercase">Current Project</span>
                   </div>
                   
                   <h2 className="font-heading text-6xl md:text-7xl mb-6">
