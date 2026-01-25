@@ -145,7 +145,6 @@ export default function DonatePage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
       <main className="flex-1">
         {/* Hero Section */}
         <section className="w-full bg-background">
@@ -302,9 +301,7 @@ export default function DonatePage() {
                     {isProcessing ? 'Processing...' : 'Complete Donation'}
                   </Button>
 
-                  <p className="font-paragraph text-xs text-secondary text-center">
-                    Your donation is secure and tax-deductible. You will receive a confirmation email with your receipt.
-                  </p>
+                  <p className="font-paragraph text-xs text-secondary text-center">Your donation is secure and extre. You will receive a confirmation email with your receipt.</p>
                 </form>
               </motion.div>
 
@@ -381,7 +378,6 @@ export default function DonatePage() {
           </div>
         </section>
       </main>
-      
       <Footer />
     </div>
   );

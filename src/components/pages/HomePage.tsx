@@ -69,9 +69,7 @@ export default function HomePage() {
           text-wrap: balance;
         }
       `}</style>
-
       <Header />
-
       <main className="flex-1 w-full">
         
         {/* --- HERO SECTION (Inspiration Image Replica) --- */}
@@ -104,14 +102,11 @@ export default function HomePage() {
                       <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
                     </div>
                   </motion.div>
-
                   {/* Decorative Corner Elements inside the green card */}
                   <div className="absolute top-8 left-8 text-softbeige/40 font-heading text-9xl leading-none select-none opacity-20">
                     *
                   </div>
-                  <div className="absolute bottom-8 right-8 w-24 h-24 border border-softbeige/20 rounded-full flex items-center justify-center animate-spin-slow">
-                    <div className="w-2 h-2 bg-softbeige rounded-full" />
-                  </div>
+
                 </motion.div>
               </div>
 
@@ -124,10 +119,7 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-heading text-2xl text-primary">01</span>
-                    <span className="font-paragraph text-sm uppercase tracking-widest text-secondary">Welcome</span>
-                  </div>
+
                 </motion.div>
 
                 {/* Center: Main Headline & CTA */}
@@ -152,7 +144,7 @@ export default function HomePage() {
                       to="/projects" 
                       className="group inline-flex items-center gap-3 text-xl font-paragraph text-primary hover:text-mutedgreen transition-colors"
                     >
-                      <span className="border-b border-primary group-hover:border-mutedgreen pb-1">Explore Projects</span>
+                      <span className="border-b border-primary group-hover:border-mutedgreen pb-1">Explore Our Current Projects</span>
                       <ArrowDownRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:translate-y-1" />
                     </Link>
                   </motion.div>
