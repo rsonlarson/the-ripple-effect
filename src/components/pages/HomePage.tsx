@@ -16,7 +16,7 @@ function useParallax(value: any, distance: number) {
 
 const SectionLabel = ({ number, text }: { number: string; text: string }) => (
   <div className="flex items-center gap-4 mb-6">
-    <span className="font-heading text-xl text-primary/60">{number}</span>
+
     <div className="h-[1px] w-12 bg-primary/30" />
     <span className="font-paragraph text-sm tracking-[0.2em] uppercase text-primary/80">{text}</span>
   </div>
@@ -191,7 +191,7 @@ export default function HomePage() {
               {/* Scrolling Content */}
               <div className="lg:w-2/3 space-y-24">
                 {[
-                  { title: "Connection", icon: Heart, text: "Building bridges between neighbors through shared acts of kindness." },
+                  { title: "Connection", icon: Heart, text: "Building bridges between neighbors through acts of giving." },
                   { title: "Sustainability", icon: Globe, text: "Reducing waste by reimagining how we consume and share resources." },
                   { title: "Warmth", icon: Coffee, text: "Creating moments of comfort and care in our daily community interactions." }
                 ].map((item, index) => (
