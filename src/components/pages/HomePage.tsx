@@ -18,7 +18,7 @@ const SectionLabel = ({ number, text }: { number: string; text: string }) => (
   <div className="flex items-center gap-4 mb-6">
     <span className="font-heading text-xl text-primary/60">{number}</span>
     <div className="h-[1px] w-12 bg-primary/30" />
-
+    <span className="font-paragraph text-sm tracking-[0.2em] uppercase text-primary/80">{text}</span>
   </div>
 );
 
@@ -177,7 +177,7 @@ export default function HomePage() {
               {/* Sticky Title */}
               <div className="lg:w-1/3">
                 <div className="sticky top-32">
-                  <SectionLabel number="02" text="Our Mission" />
+                  <SectionLabel number="02" text="Who we Are" />
                   <h2 className="font-heading text-5xl md:text-6xl text-primary leading-tight mb-8">
                     Small Acts,<br />
                     <span className="italic text-mutedgreen">Big Impact.</span>
