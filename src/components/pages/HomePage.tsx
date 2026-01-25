@@ -18,7 +18,7 @@ const SectionLabel = ({ number, text }: { number: string; text: string }) => (
   <div className="flex items-center gap-4 mb-6">
     <span className="font-heading text-xl text-primary/60">{number}</span>
     <div className="h-[1px] w-12 bg-primary/30" />
-    <span className="font-paragraph text-sm tracking-[0.2em] uppercase text-primary/80">{text}</span>
+
   </div>
 );
 
