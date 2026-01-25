@@ -319,9 +319,7 @@ export default function HomePage() {
                   className="relative p-10 bg-white rounded-3xl border border-primary/5 hover:border-primary/20 transition-colors duration-500 group"
                 >
                   <div className="font-heading text-6xl text-primary/10 absolute top-6 right-8 group-hover:text-primary/20 transition-colors">{item.step}</div>
-                  <div className="h-12 w-12 bg-mutedgreen/20 rounded-full mb-8 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <div className="h-2 w-2 bg-primary rounded-full" />
-                  </div>
+
                   <h3 className="font-heading text-2xl text-primary mb-4">{item.title}</h3>
                   <p className="font-paragraph text-secondary">{item.desc}</p>
                 </motion.div>
