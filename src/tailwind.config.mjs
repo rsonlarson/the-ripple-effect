@@ -19,7 +19,7 @@ export default {
                 '9xl': ['8rem', { lineHeight: '1', letterSpacing: '0.07em', fontWeight: '900' }],
             },
             fontFamily: {
-                heading: "playfair display",
+                heading: "chewy",
                 paragraph: "raleway"
             },
             colors: {
