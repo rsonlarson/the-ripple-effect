@@ -23,17 +23,17 @@ export default {
                 paragraph: "raleway"
             },
             colors: {
-                softbeige: '#F5F0EB',
-                mutedgreen: '#69705C',
-                deepgreen: '#2F4F2F',
-                foreground: '#2F4F2F',
+                softbeige: '#FFFFFF',
+                mutedgreen: '#5A8F7B',
+                deepgreen: '#2D5A4F',
+                foreground: '#1A1A1A',
                 destructive: '#DF3131',
                 destructiveforeground: '#FFFFFF',
-                background: '#F5F0EB',
-                secondary: '#69705C',
-                'secondary-foreground': '#2F4F2F',
-                'primary-foreground': '#F5F0EB',
-                primary: '#2F4F2F'
+                background: '#FFFFFF',
+                secondary: '#4A7C8C',
+                'secondary-foreground': '#1A1A1A',
+                'primary-foreground': '#FFFFFF',
+                primary: '#1A1A1A'
             },
         },
     },
