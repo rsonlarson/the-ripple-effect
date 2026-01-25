@@ -11,7 +11,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Heart, CheckCircle } from 'lucide-react';
+import { Heart, CheckCircle, AlertCircle } from 'lucide-react';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
 
 export default function DonatePage() {
   const [searchParams] = useSearchParams();
@@ -25,8 +26,11 @@ export default function DonatePage() {
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [error, setError] = useState<string>('');
+  const [isLoadingProjects, setIsLoadingProjects] = useState(true);
 
-  const predefinedAmounts = ['25', '50', '100', '250'];
+  const predefinedAmounts = ['5', '10', '20', '50'];
 
   useEffect(() => {
     loadProjects();
@@ -34,10 +38,14 @@ export default function DonatePage() {
 
   const loadProjects = async () => {
     try {
+      setIsLoadingProjects(true);
       const result = await BaseCrudService.getAll<Projects>('projects');
       setProjects(result.items.filter(p => p.isActive));
     } catch (error) {
       console.error('Error loading projects:', error);
+      setError('Failed to load projects');
+    } finally {
+      setIsLoadingProjects(false);
     }
   };
 
@@ -51,17 +59,31 @@ export default function DonatePage() {
     setAmount('');
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     const donationAmount = customAmount || amount;
     if (!donationAmount || !name || !email) {
+      setError('Please fill in all required fields');
       return;
     }
 
-    // In a real application, this would process the payment
-    // For now, we'll just show a success message
-    setIsSubmitted(true);
+    setError('');
+    setIsProcessing(true);
+
+    try {
+      // Simulate payment processing with a delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // In a real application, this would integrate with a payment processor
+      // like Stripe, PayPal, or similar
+      setIsSubmitted(true);
+    } catch (err) {
+      setError('Payment processing failed. Please try again.');
+      console.error('Payment error:', err);
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   const selectedProject = projects.find(p => p._id === selectedProjectId);
@@ -97,7 +119,15 @@ export default function DonatePage() {
                 </p>
                 
                 <Button
-                  onClick={() => setIsSubmitted(false)}
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    setAmount('');
+                    setCustomAmount('');
+                    setName('');
+                    setEmail('');
+                    setMessage('');
+                    setError('');
+                  }}
                   className="bg-primary text-primary-foreground hover:bg-secondary"
                 >
                   Make Another Donation
@@ -151,23 +181,36 @@ export default function DonatePage() {
                 transition={{ duration: 0.8 }}
               >
                 <form onSubmit={handleSubmit} className="bg-background rounded-3xl p-8 md:p-12 space-y-8">
+                  {error && (
+                    <div className="flex gap-3 p-4 bg-destructive/10 rounded-lg border border-destructive/20">
+                      <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                      <p className="font-paragraph text-sm text-destructive">{error}</p>
+                    </div>
+                  )}
+
                   <div className="space-y-4">
                     <Label htmlFor="project" className="font-paragraph text-base text-primary">
                       Select Project
                     </Label>
-                    <Select value={selectedProjectId} onValueChange={setSelectedProjectId}>
-                      <SelectTrigger id="project" className="w-full">
-                        <SelectValue placeholder="Choose a project" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="general">General Fund</SelectItem>
-                        {projects.map(project => (
-                          <SelectItem key={project._id} value={project._id}>
-                            {project.projectName}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    {isLoadingProjects ? (
+                      <div className="flex items-center justify-center py-8">
+                        <LoadingSpinner />
+                      </div>
+                    ) : (
+                      <Select value={selectedProjectId} onValueChange={setSelectedProjectId}>
+                        <SelectTrigger id="project" className="w-full">
+                          <SelectValue placeholder="Choose a project" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="general">General Fund</SelectItem>
+                          {projects.map(project => (
+                            <SelectItem key={project._id} value={project._id}>
+                              {project.projectName}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    )}
                   </div>
 
                   <div className="space-y-4">
@@ -180,7 +223,8 @@ export default function DonatePage() {
                           key={value}
                           type="button"
                           onClick={() => handleAmountClick(value)}
-                          className={`px-6 py-4 rounded-lg font-paragraph text-base transition-colors ${
+                          disabled={isProcessing}
+                          className={`px-6 py-4 rounded-lg font-paragraph text-base transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
                             amount === value
                               ? 'bg-primary text-primary-foreground'
                               : 'border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground'
@@ -199,6 +243,7 @@ export default function DonatePage() {
                         placeholder="Custom amount"
                         value={customAmount}
                         onChange={(e) => handleCustomAmountChange(e.target.value)}
+                        disabled={isProcessing}
                         className="pl-8"
                         min="1"
                       />
@@ -215,6 +260,7 @@ export default function DonatePage() {
                       placeholder="John Doe"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
+                      disabled={isProcessing}
                       required
                     />
                   </div>
@@ -229,6 +275,7 @@ export default function DonatePage() {
                       placeholder="john@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      disabled={isProcessing}
                       required
                     />
                   </div>
@@ -242,6 +289,7 @@ export default function DonatePage() {
                       placeholder="Share why you're supporting our mission..."
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
+                      disabled={isProcessing}
                       rows={4}
                     />
                   </div>
@@ -249,9 +297,9 @@ export default function DonatePage() {
                   <Button
                     type="submit"
                     className="w-full bg-primary text-primary-foreground hover:bg-secondary py-6 text-lg"
-                    disabled={(!amount && !customAmount) || !name || !email}
+                    disabled={(!amount && !customAmount) || !name || !email || isProcessing}
                   >
-                    Complete Donation
+                    {isProcessing ? 'Processing...' : 'Complete Donation'}
                   </Button>
 
                   <p className="font-paragraph text-xs text-secondary text-center">
