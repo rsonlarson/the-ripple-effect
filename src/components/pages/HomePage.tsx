@@ -16,9 +16,8 @@ function useParallax(value: any, distance: number) {
 
 const SectionLabel = ({ number, text }: { number: string; text: string }) => (
   <div className="flex items-center gap-4 mb-6">
-
     <div className="h-[1px] w-12 bg-primary/30" />
-    <span className="font-paragraph text-sm tracking-[0.2em] uppercase text-primary/80">{text}</span>
+
   </div>
 );
 
@@ -301,7 +300,7 @@ export default function HomePage() {
           <div className="max-w-[110rem] mx-auto px-6 md:px-12">
             <div className="mb-20 text-center max-w-3xl mx-auto">
               <SectionLabel number="03" text="How It Works" />
-
+              <h2 className="font-heading text-4xl md:text-5xl text-primary">Simple Steps, Lasting Change</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -316,7 +315,6 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.2 }}
-                  className="relative p-10 bg-white rounded-3xl border border-primary/5 hover:border-primary/20 transition-colors duration-500 group"
                 >
 
                 </motion.div>
