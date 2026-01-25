@@ -301,7 +301,7 @@ export default function HomePage() {
           <div className="max-w-[110rem] mx-auto px-6 md:px-12">
             <div className="mb-20 text-center max-w-3xl mx-auto">
               <SectionLabel number="03" text="How It Works" />
-              <h2 className="font-heading text-4xl md:text-5xl text-primary">Simple Steps, Lasting Change</h2>
+
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -318,10 +318,7 @@ export default function HomePage() {
                   transition={{ duration: 0.5, delay: i * 0.2 }}
                   className="relative p-10 bg-white rounded-3xl border border-primary/5 hover:border-primary/20 transition-colors duration-500 group"
                 >
-                  <div className="font-heading text-6xl text-primary/10 absolute top-6 right-8 group-hover:text-primary/20 transition-colors">{item.step}</div>
 
-                  <h3 className="font-heading text-2xl text-primary mb-4">{item.title}</h3>
-                  <p className="font-paragraph text-secondary">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
