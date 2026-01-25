@@ -7,11 +7,29 @@ import AboutPage from '@/components/pages/AboutPage';
 import ProjectsPage from '@/components/pages/ProjectsPage';
 import ProjectDetailPage from '@/components/pages/ProjectDetailPage';
 import DonatePage from '@/components/pages/DonatePage';
+import { useState, useEffect } from 'react';
+import SplashScreen from '@/components/SplashScreen';
 
-// Layout component that includes ScrollToTop
+// Layout component that includes ScrollToTop and SplashScreen
 function Layout() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    // Check if splash screen has been shown in this session
+    const splashShown = sessionStorage.getItem('splashScreenShown');
+    if (splashShown) {
+      setShowSplash(false);
+    }
+  }, []);
+
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+    sessionStorage.setItem('splashScreenShown', 'true');
+  };
+
   return (
     <>
+      {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
       <ScrollToTop />
       <Outlet />
     </>
