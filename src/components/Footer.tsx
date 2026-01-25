@@ -33,7 +33,7 @@ export default function Footer() {
           <div>
             <h4 className="font-heading text-lg mb-4">Contact</h4>
             <div className="font-paragraph text-sm opacity-90 space-y-2">
-              <p>Email: info@rippleeffect.org</p>
+              <p>Email: sorengreenlarson@gmail.com</p>
               <p>Phone: (555) 123-4567</p>
               <p>Address: 123 Community Lane, Green City, GC 12345</p>
             </div>

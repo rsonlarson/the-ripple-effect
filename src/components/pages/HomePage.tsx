@@ -16,7 +16,6 @@ function useParallax(value: any, distance: number) {
 
 const SectionLabel = ({ number, text }: { number: string; text: string }) => (
   <div className="flex items-center gap-4 mb-6">
-    <div className="h-[1px] w-12 bg-primary/30" />
 
   </div>
 );
@@ -300,7 +299,7 @@ export default function HomePage() {
           <div className="max-w-[110rem] mx-auto px-6 md:px-12">
             <div className="mb-20 text-center max-w-3xl mx-auto">
               <SectionLabel number="03" text="How It Works" />
-              <h2 className="font-heading text-4xl md:text-5xl text-primary">Simple Steps, Lasting Change</h2>
+              <h2 className="font-heading text-4xl md:text-5xl text-primary">Simple Acts, Lasting Change</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -328,10 +327,10 @@ export default function HomePage() {
         <section className="relative w-full h-[80vh] overflow-hidden flex items-center justify-center">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://static.wixstatic.com/media/a4f116_16c0335bbe5a45cfacfa26be6442570b~mv2.png?originWidth=1280&originHeight=704"
-              alt="Community impact"
+              src="https://static.wixstatic.com/media/a4f116_c5a0e76a9d6642a4999cb138c3eaf440~mv2.png"
               className="w-full h-full object-cover brightness-[0.3]"
-            />
+              originWidth={500}
+              originHeight={500} />
           </div>
           
           <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
