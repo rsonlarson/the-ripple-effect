@@ -4,28 +4,18 @@ import { motion } from 'framer-motion';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { BaseCrudService } from '@/integrations';
-import { Projects } from '@/entities';
+import { projects } from '@/data/projects';
 import { ArrowRight } from 'lucide-react';
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState<Projects[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    loadProjects();
+    setIsLoading(false);
   }, []);
 
-  const loadProjects = async () => {
-    try {
-      const result = await BaseCrudService.getAll<Projects>('projects');
-      setProjects(result.items.filter(p => p.isActive));
-    } catch (error) {
-      console.error('Error loading projects:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  // Replace Wix CRUD fetch with local data
+  const activeProjects = projects.filter((p) => p.isActive !== false);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -55,9 +45,9 @@ export default function ProjectsPage() {
         <section className="w-full bg-softbeige">
           <div className="max-w-[100rem] mx-auto px-8 py-24">
             <div className="min-h-[400px]">
-              {isLoading ? null : projects.length > 0 ? (
+              {isLoading ? null : activeProjects.length > 0 ? (
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                  {projects.map((project, index) => (
+                  {activeProjects.map((project, index) => (
                     <motion.div
                       key={project._id}
                       initial={{ opacity: 0, y: 30 }}

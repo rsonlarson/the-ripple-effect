@@ -23,7 +23,7 @@ export default function AboutPage() {
                 About Us
               </h1>
               <p className="font-paragraph text-xl text-secondary leading-relaxed">
-                Building bridges of kindness and sustainability in our communities
+                Who We Are and What We Stand For
               </p>
             </motion.div>
           </div>
@@ -45,14 +45,9 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 font-paragraph text-base text-secondary leading-relaxed">
                   <p>
-                    The Ripple Effect was born from a simple observation: small acts of kindness have the power to create waves of positive change that extend far beyond their initial impact.
-                  </p>
-                  <p>
-                    We started with a vision to connect communities through meaningful, sustainable initiatives that address real needs while fostering human connection. Our approach is rooted in the belief that everyone has something valuable to contribute, and that collective action, no matter how modest, can transform lives.
-                  </p>
-                  <p>
-                    Today, we continue to grow our network of compassionate individuals and organizations, all united by a shared commitment to making the world a little warmer, a little greener, and a lot more connected.
-                  </p>
+                    The Ripple Effect, founded in 2026, began with a simple observation: Our self-evident lack of connection with each other. </p>
+                  <p> Today, as we become more technologically dependent there is a quiet fear of losing touch- not with our parents, partners, or closest friends, but with the people outside our immediate sight. The neighbor we no longer run into. I am talking about looking up on our phones where to find the bell peppers instead of asking George, the kind face at the grocery store. While efficiency has its benefits, it can also come at the cost of human connection. The Ripple Effect exists to remind us that progress should not replace meaningful interaction - and that there must be space to intentionally grow it too.                 </p>
+                  <p> The team we have today consists of passionate college students who believe in the power of community and the importance of fostering genuine connections. We are committed to creating a more compassionate and engaged society, one small act at a time.                  </p>
                 </div>
               </motion.div>
 

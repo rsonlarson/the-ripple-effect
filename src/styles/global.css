@@ -1,8 +1,17 @@
-@import './fonts.css';
-
-/* Import Chewy font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@import "./fonts.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html, body {
+    font-family: "Raleway", system-ui, sans-serif !important;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-family: "Chewy", system-ui, sans-serif !important;
+  }
+}
+
+
+

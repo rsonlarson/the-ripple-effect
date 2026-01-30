@@ -33,8 +33,10 @@ export default function Footer() {
           <div>
             <h4 className="font-heading text-lg mb-4">Contact</h4>
             <div className="font-paragraph text-sm opacity-90 space-y-2">
+              <p>Name: Soren Larson</p>
               <p>Email: sorengreenlarson@gmail.com</p>
               <p>Phone: (630) 746-5714</p>
+              <p>Instagram: @TheRippleEffect</p>
 
             </div>
           </div>

@@ -61,7 +61,7 @@ export default function HomePage() {
     <div ref={containerRef} className="min-h-screen flex flex-col bg-softbeige overflow-clip selection:bg-primary selection:text-softbeige">
       <style>{`
         .clip-circle-custom {
-          clip-path: circle(42% at 50% 50%);
+          clip-path: circle(38% at 50% 50%);
         }
         .text-balance {
           text-wrap: balance;
@@ -86,13 +86,13 @@ export default function HomePage() {
                   {/* The Circle Window */}
                   <motion.div 
                     initial={{ clipPath: 'circle(0% at 50% 50%)' }}
-                    animate={{ clipPath: 'circle(42% at 50% 50%)' }}
+                    animate={{ clipPath: 'circle(45% at 50% 50%)' }}
                     transition={{ duration: 1.5, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute inset-0 w-full h-full clip-circle-custom bg-softbeige"
+                    className="w-[100%] aspect-square clip-circle-custom bg-softbeige "
                   >
-                    <div className="relative w-full h-full scale-110">
+                    <div className="relative w-full h-full scale-90">
                       <Image
-                        src="https://static.wixstatic.com/media/a4f116_dbefc7e5f22b42d9afdeb553c57c239a~mv2.png?originWidth=960&originHeight=704"
+                        src="src\components\homepage_photo.png"
                         alt="Community connection"
                         className="w-full h-full object-cover opacity-90"
                       />
@@ -102,8 +102,7 @@ export default function HomePage() {
                   </motion.div>
                   {/* Decorative Corner Elements inside the green card */}
                   <div className="absolute top-8 left-8 text-softbeige/40 font-heading text-9xl leading-none select-none opacity-20">
-                    *
-                  </div>
+                </div>
 
                 </motion.div>
               </div>
@@ -233,7 +232,7 @@ export default function HomePage() {
                   {/* Main Image */}
                   <div className="absolute inset-0 rounded-t-[10rem] rounded-b-3xl overflow-hidden z-10">
                     <Image
-                      src="https://static.wixstatic.com/media/a4f116_9c780ea0b34648edab8c35fcd0f3494f~mv2.png?originWidth=1024&originHeight=1280"
+                      src="src/components/MFM_main_photo.png"
                       alt="Mugs for Many Initiative"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
                     />
@@ -324,11 +323,11 @@ export default function HomePage() {
 
 
         {/* --- CTA SECTION (Full Bleed Parallax) --- */}
-        <section className="relative w-full h-[80vh] overflow-hidden flex items-center justify-center">
+        <section className="relative w-full h-[105vh] overflow-hidden flex items-center justify-center translate-y-3">
           <div className="absolute inset-0 z-0">
             <Image
               src="https://static.wixstatic.com/media/a4f116_c5a0e76a9d6642a4999cb138c3eaf440~mv2.png"
-              className="w-full h-full object-cover brightness-[0.3]"
+              className="w-full h-full object-cover brightness-[0.4] contrast-[1.1]"
               originWidth={500}
               originHeight={500} />
           </div>
@@ -341,17 +340,17 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              <h2 className="font-heading text-5xl md:text-7xl text-softbeige leading-tight">
+              <h2 className="font-heading text-5xl md:text-7xl text-white leading-tight">
                 Be the Ripple in <br />
                 Someone's Day
               </h2>
-              <p className="font-paragraph text-xl text-softbeige/80 max-w-2xl mx-auto">
+              <p className="font-paragraph text-xl text-white/80 max-w-2xl mx-auto">
                 Your contribution helps us expand our initiatives and reach more communities. Together, we can create lasting positive impact.
               </p>
               <div className="pt-8">
                 <Link
                   to="/donate"
-                  className="inline-flex items-center gap-3 px-10 py-5 bg-softbeige text-primary font-paragraph text-lg font-medium rounded-full hover:bg-mutedgreen hover:text-softbeige transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center gap-3 px-10 py-5 bg-white text-primary font-paragraph text-lg font-medium rounded-full hover:bg-mutedgreen hover:text-softbeige transition-all duration-300 transform hover:scale-105"
                 >
                   Make a Donation
                   <Heart className="w-5 h-5 fill-current" />
