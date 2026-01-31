@@ -92,7 +92,7 @@ export default function HomePage() {
                   >
                     <div className="relative w-full h-full scale-90">
                       <Image
-                        src="src\components\homepage_photo.png"
+                        src="/images/homepage_photo.png"
                         alt="Community connection"
                         className="w-full h-full object-cover opacity-90"
                       />
@@ -232,7 +232,7 @@ export default function HomePage() {
                   {/* Main Image */}
                   <div className="absolute inset-0 rounded-t-[10rem] rounded-b-3xl overflow-hidden z-10">
                     <Image
-                      src="src/components/MFM_main_photo.png"
+                      src="/images/MFM_main_photo.png"
                       alt="Mugs for Many Initiative"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
                     />
@@ -327,9 +327,11 @@ export default function HomePage() {
           <div className="absolute inset-0 z-0">
             <Image
               src="https://static.wixstatic.com/media/a4f116_c5a0e76a9d6642a4999cb138c3eaf440~mv2.png"
+              alt="Background image for the call-to-action section"
               className="w-full h-full object-cover brightness-[0.4] contrast-[1.1]"
               originWidth={500}
-              originHeight={500} />
+              originHeight={500}
+            />
           </div>
           
           <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
