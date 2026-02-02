@@ -10,9 +10,9 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    _id: 'project-1',
-    projectName: 'Project 1',
-    shortSummary: 'Short summary here',
+    _id: 'Prjct_1',
+    projectName: 'Mugs for Many',
+    shortSummary: 'something here',
     description: 'Longer description here',
     slogan: 'A short slogan',
     projectImage: '',

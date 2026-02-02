@@ -60,7 +60,7 @@ export default function AboutPage() {
               >
                 <div className="aspect-[4/3] rounded-3xl overflow-hidden">
                   <Image
-                    src="https://static.wixstatic.com/media/a4f116_b2625af6cf74429c9bd7bf80636fec4e~mv2.png?originWidth=576&originHeight=448"
+                    src="/images/group_photo.png"
                     alt="Community gathering and connection"
                     width={600}
                     className="w-full h-full object-cover"
