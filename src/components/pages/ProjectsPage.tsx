@@ -80,7 +80,7 @@ export default function ProjectsPage() {
                             )}
                             
                             {project.shortSummary && (
-                              <p className="font-paragraph text-base text-secondary leading-relaxed">
+                              <p className="font-paragraph text-base text-secondary leading-relaxed whitespace-pre-line">
                                 {project.shortSummary}
                               </p>
                             )}

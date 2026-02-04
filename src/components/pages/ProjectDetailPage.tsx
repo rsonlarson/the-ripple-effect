@@ -111,7 +111,7 @@ export default function ProjectDetailPage() {
                   </h2>
                   
                   {project.shortSummary && (
-                    <p className="font-paragraph text-lg text-primary leading-relaxed">
+                    <p className="font-paragraph text-lg text-primary leading-relaxed whitespace-pre-line">
                       {project.shortSummary}
                     </p>
                   )}
@@ -133,19 +133,23 @@ export default function ProjectDetailPage() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="space-y-8"
                 >
-                  <div className="bg-softbeige rounded-2xl p-8 space-y-6">
+                  <div className="bg-softbeige rounded-2xl p-6 space-y-4">
                     <h3 className="font-heading text-2xl text-primary">
                       Support This Project
                     </h3>
                     <p className="font-paragraph text-base text-secondary">
                       Your contribution helps us expand this initiative and reach more communities.
                     </p>
-                    <Link
-                      to={`/donate?project=${project._id}`}
-                      className="block w-full text-center px-8 py-4 bg-primary text-primary-foreground font-paragraph text-base rounded-lg hover:bg-secondary transition-colors"
-                    >
-                      Donate Now
-                    </Link>
+
+                    {/* Gray rounded rectangle behind the button */}
+                    <div className="rounded-lg bg-zinc-200/90 p-1.5">
+                      <Link
+                        to={`/donate?project=${project._id}`}
+                        className="block w-full text-center px-6 py-3 bg-primary text-primary-foreground font-bold text-sm rounded-md hover:bg-secondary transition-colors"
+                      >
+                        Donate Now
+                      </Link>
+                    </div>
                   </div>
 
                   <div className="space-y-4">
