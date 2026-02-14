@@ -67,19 +67,8 @@ export default function SplashScreen({ onComplete, durationMs = 2000 }: SplashSc
             repeat: isExiting ? 0 : Infinity,
           }}
         />
-
-        {/* Text */}
-        <motion.div
-          className="absolute text-center"
-          initial={{ opacity: 0 }}
-          animate={isExiting ? { opacity: 0 } : { opacity: [0, 1, 1] }}
-          transition={{
-            duration: 0.8,
-            times: [0, 0.35, 1],
-            ease: "easeInOut",
-          }}
-        >
       </div>
     </motion.div>
   );
 }
+
