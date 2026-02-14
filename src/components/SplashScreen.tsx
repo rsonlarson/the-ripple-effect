@@ -79,9 +79,6 @@ export default function SplashScreen({ onComplete, durationMs = 2000 }: SplashSc
             ease: "easeInOut",
           }}
         >
-          <h1 className="font-heading text-5xl md:text-6xl text-primary mb-4">THE RIPPLE</h1>
-          <p className="font-paragraph text-lg text-secondary">Creating waves of positive change</p>
-        </motion.div>
       </div>
     </motion.div>
   );
